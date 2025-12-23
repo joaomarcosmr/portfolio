@@ -40,7 +40,7 @@ export default function About() {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <motion.div variants={fadeIn("right", 0.4)} className="relative">
+          <motion.div variants={fadeIn("right", 0.4)} className="relative order-2 lg:order-1">
             <div className="relative w-full aspect-square max-w-xs sm:max-w-sm mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl transform rotate-6" />
               <div className="relative bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
@@ -56,7 +56,7 @@ export default function About() {
           </motion.div>
 
           {/* Content */}
-          <motion.div variants={fadeIn("left", 0.4)} className="space-y-6">
+          <motion.div variants={fadeIn("left", 0.4)} className="space-y-6 order-1 lg:order-2">
             <h3 className="text-3xl font-bold text-foreground">
               {t.about.role}
             </h3>

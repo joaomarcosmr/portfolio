@@ -172,7 +172,7 @@ Aguardo retorno!`;
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-10"
+          className="text-center mb-10 mt-16 md:mt-10"
         >
           <motion.div
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 backdrop-blur-sm mb-6"
