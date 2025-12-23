@@ -6,6 +6,7 @@ import { ExternalLink } from "lucide-react";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { PROJECTS } from "@/lib/constants";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getImagePath } from "@/lib/config";
 import Image from "next/image";
 
 export default function Projects() {
@@ -54,7 +55,7 @@ export default function Projects() {
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
                   <Image
-                    src={project.image}
+                    src={getImagePath(project.image)}
                     alt={title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"

@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { CheckCircle2 } from "lucide-react";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getImagePath } from "@/lib/config";
 import Image from "next/image";
 
 export default function About() {
@@ -44,7 +45,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl transform rotate-6" />
               <div className="relative bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/profile.png"
+                  src={getImagePath("/images/profile.png")}
                   alt="João Marcos - Brazilian Developer"
                   width={800}
                   height={800}
