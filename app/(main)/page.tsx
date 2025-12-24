@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
+import Comparison from "@/components/sections/Comparison";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import AnimatedBackground from "@/components/animations/AnimatedBackground";
@@ -23,11 +24,12 @@ export default function Home() {
         <SectionDivider variant="gradient" />
         <Skills />
         <SectionDivider variant="dots" />
-        <Testimonials />
+        <Comparison />
         <SectionDivider variant="gradient" />
+        <Testimonials />
+        <SectionDivider variant="dots" />
         <Contact />
       </div>
     </div>
   );
 }
-
