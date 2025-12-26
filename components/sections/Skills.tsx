@@ -17,11 +17,12 @@ export default function Skills() {
   });
 
   return (
-    <section id="skills" className="section relative overflow-hidden bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900">
-      {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-10">
+    <section id="skills" className="section relative overflow-hidden bg-[#0a0a0a]">
+      {/* Background Grid with Fade Edges */}
+      <div className="absolute inset-0">
+        {/* Grid Pattern */}
         <div
-          className="h-full w-full"
+          className="h-full w-full opacity-10"
           style={{
             backgroundImage: `
               linear-gradient(to right, rgba(14, 165, 233, 0.5) 1px, transparent 1px),
@@ -30,6 +31,11 @@ export default function Skills() {
             backgroundSize: "60px 60px",
           }}
         />
+        {/* Fade edges */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent" />
+        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
       </div>
 
       {/* Glowing Orbs */}

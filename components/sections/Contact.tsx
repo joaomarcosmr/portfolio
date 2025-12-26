@@ -79,10 +79,10 @@ export default function Contact() {
           variants={fadeIn("up", 0.4)} 
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
         >
-          {contactInfo.map((info, index) => (
-            <motion.a
-              key={info.title}
-              href={info.href}
+              {contactInfo.map((info, index) => (
+                <motion.a
+                  key={info.title}
+                  href={info.href}
               target="_blank"
               rel="noopener noreferrer"
               variants={fadeIn("up", 0.3 + index * 0.1)}
@@ -101,7 +101,7 @@ export default function Contact() {
               </div>
             </motion.a>
           ))}
-        </motion.div>
+                </motion.div>
 
       </motion.div>
     </section>

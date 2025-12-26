@@ -102,7 +102,7 @@ export default function Navbar() {
         </div>
       </div>
 
-          {/* Mobile Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

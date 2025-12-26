@@ -32,11 +32,12 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="comparison" className="section relative overflow-hidden bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
+    <section id="comparison" className="section relative overflow-hidden bg-[#0a0a0a]">
+      {/* Background Grid with Fade Edges */}
+      <div className="absolute inset-0">
+        {/* Grid Pattern */}
         <div
-          className="h-full w-full"
+          className="h-full w-full opacity-10"
           style={{
             backgroundImage: `
               linear-gradient(to right, rgba(14, 165, 233, 0.5) 1px, transparent 1px),
@@ -45,6 +46,14 @@ export default function Comparison() {
             backgroundSize: "60px 60px",
           }}
         />
+        {/* Fade edges - Top */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+        {/* Fade edges - Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+        {/* Fade edges - Left */}
+        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent" />
+        {/* Fade edges - Right */}
+        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
       </div>
 
       <motion.div
@@ -132,7 +141,7 @@ export default function Comparison() {
           {/* My Card */}
           <motion.div
             variants={fadeIn("left", 0.3)}
-            className="relative p-8 rounded-2xl bg-gradient-to-br from-primary-500/10 to-accent-500/10 border-2 border-primary-500/50 backdrop-blur-sm shadow-[0_0_40px_rgba(14,165,233,0.2)]"
+            className="relative p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border-2 border-primary-500/50 backdrop-blur-sm shadow-[0_0_40px_rgba(14,165,233,0.2)]"
           >
             {/* Popular Tag */}
             <motion.div
@@ -157,22 +166,22 @@ export default function Comparison() {
 
             {/* Price */}
             <div className="text-center mb-8">
-              <div className="text-primary-300 text-sm mb-2">{t.comparison?.me?.fixedPrice || "Preço fixo"}</div>
+              <div className="text-cyan-300 text-sm font-medium mb-2">{t.comparison?.me?.fixedPrice || "Fixed price"}</div>
               <div className="flex items-center justify-center">
                 <motion.span 
-                  className="text-6xl font-black bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent"
+                  className="text-6xl font-black text-green-400"
                   animate={{ scale: [1, 1.02, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   €390
                 </motion.span>
               </div>
-              <div className="text-primary-300/80 text-sm mt-1">
-                {t.comparison?.me?.upToPages || "Site de até 5 páginas"}
+              <div className="text-gray-300 text-sm mt-1">
+                {t.comparison?.me?.upToPages || "Static website up to 5 pages"}
               </div>
               <div className="text-green-400 text-sm mt-2 flex items-center justify-center gap-1">
                 <Check size={14} />
-                <span>{t.comparison?.me?.noMonthly || "Sem mensalidade"}</span>
+                <span>{t.comparison?.me?.noMonthly || "No monthly fee"}</span>
               </div>
             </div>
 

@@ -94,10 +94,10 @@ export default function Hero() {
               className="flex flex-wrap gap-3 justify-center lg:justify-start"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4 text-primary-400" />
-                <span className="text-sm font-medium text-primary-300">
-                  {t.hero.available}
-                </span>
+              <Sparkles className="w-4 h-4 text-primary-400" />
+              <span className="text-sm font-medium text-primary-300">
+                {t.hero.available}
+              </span>
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/30 backdrop-blur-sm">
                 <Globe className="w-4 h-4 text-accent-400" />
@@ -169,7 +169,7 @@ export default function Hero() {
                   .replace(
                     /Dedicação total|Total dedication/gi,
                     '<span class="text-cyan-400 font-semibold">$&</span>'
-                  )
+                )
               }}
             />
 
@@ -326,7 +326,7 @@ export default function Hero() {
                       className="flex items-center justify-center gap-2 text-primary-300 text-sm font-medium"
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                    >
+                >
                       <Clock className="w-4 h-4" />
                       <span>{t.hero.highlight}</span>
                     </motion.div>
