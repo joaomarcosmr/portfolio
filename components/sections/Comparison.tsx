@@ -81,15 +81,15 @@ export default function Comparison() {
             className="relative p-8 rounded-2xl bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm"
           >
             {/* Badge */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gray-700 rounded-full text-gray-300 text-sm font-medium">
-              {t.comparison?.agency?.badge || "Agência Europeia"}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gray-700 rounded-full text-gray-100 text-sm font-medium whitespace-nowrap">
+              {t.comparison?.agency?.badge || "European Agency"}
             </div>
 
             {/* Price */}
             <div className="text-center mb-8 pt-4">
-              <div className="text-gray-400 text-sm mb-2">{t.comparison?.agency?.startingAt || "Starting at"}</div>
+              <div className="text-gray-300 text-sm mb-2">{t.comparison?.agency?.startingAt || "Starting at"}</div>
               <div className="flex items-center justify-center gap-1">
-                <span className="text-4xl md:text-5xl font-black text-gray-300">€800-1500</span>
+                <span className="text-4xl md:text-5xl font-black text-gray-200">€800-1500</span>
               </div>
               <div className="text-red-400 text-sm mt-2 flex items-center justify-center gap-1">
                 <span>+ €200/{t.comparison?.agency?.monthlyLabel || "monthly"}</span>
@@ -113,7 +113,7 @@ export default function Comparison() {
                       <X size={16} />
                     )}
                   </div>
-                  <span className={`${feature.negative || !feature.included ? "text-gray-500" : "text-gray-300"}`}>
+                  <span className={`${feature.negative || !feature.included ? "text-gray-400" : "text-gray-200"}`}>
                     {feature.label}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export default function Comparison() {
             {/* Total */}
             <div className="mt-8 pt-6 border-t border-gray-700">
               <div className="text-center">
-                <div className="text-gray-400 text-sm">{t.comparison?.agency?.firstYear || "1st Year (estimate)"}</div>
+                <div className="text-gray-300 text-sm">{t.comparison?.agency?.firstYear || "1st Year (estimate)"}</div>
                 <div className="text-3xl font-bold text-red-400 mt-1">€3.200+</div>
               </div>
             </div>
@@ -134,27 +134,29 @@ export default function Comparison() {
             variants={fadeIn("left", 0.3)}
             className="relative p-8 rounded-2xl bg-gradient-to-br from-primary-500/10 to-accent-500/10 border-2 border-primary-500/50 backdrop-blur-sm shadow-[0_0_40px_rgba(14,165,233,0.2)]"
           >
-            {/* Badge */}
-            <motion.div 
-              className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full text-white text-sm font-bold flex items-center gap-2"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Heart size={14} className="fill-white" />
-              {t.comparison?.me?.badge || "Brazilian Developer"}
-            </motion.div>
-
             {/* Popular Tag */}
             <motion.div
-              className="absolute -top-3 -right-3 px-3 py-1 bg-green-500 rounded-full text-white text-xs font-bold"
+              className="absolute -top-3 -right-3 px-3 py-1 bg-green-500 rounded-full text-white text-xs font-bold z-10"
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              {t.comparison?.me?.popular || "MELHOR CUSTO"}
+              {t.comparison?.me?.popular || "BEST VALUE"}
+            </motion.div>
+
+            {/* Badge - Inside card */}
+            <motion.div 
+              className="mb-4 flex justify-center"
+              animate={{ scale: [1, 1.02, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full text-white font-bold shadow-lg">
+                <Heart size={16} className="fill-white" />
+                <span>{t.comparison?.me?.badge || "Brazilian Developer"}</span>
+              </div>
             </motion.div>
 
             {/* Price */}
-            <div className="text-center mb-8 pt-4">
+            <div className="text-center mb-8">
               <div className="text-primary-300 text-sm mb-2">{t.comparison?.me?.fixedPrice || "Preço fixo"}</div>
               <div className="flex items-center justify-center">
                 <motion.span 
