@@ -32,8 +32,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="en" className="scroll-smooth dark" style={{ colorScheme: 'dark' }}>
+      <head>
+        <meta name="color-scheme" content="dark" />
+        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="supported-color-schemes" content="dark" />
+      </head>
+      <body className={`${inter.variable} font-sans antialiased bg-[#0a0a0a] text-white`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>
