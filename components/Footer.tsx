@@ -116,6 +116,14 @@ export default function Footer() {
           <p>
             &copy; {currentYear} João Marcos. {t.footer.copyright}
           </p>
+          <p className="mt-2">
+            <a
+              href="/privacity"
+              className="text-gray-400 hover:text-primary-400 transition-colors underline"
+            >
+              Política de Privacidade
+            </a>
+          </p>
         </motion.div>
       </div>
     </footer>
