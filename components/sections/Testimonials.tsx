@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { Rocket, MessageSquare, ArrowRight } from "lucide-react";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
-import Link from "next/link";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 export default function Testimonials() {
   const { t } = useLanguage();
@@ -77,25 +77,27 @@ export default function Testimonials() {
 
         {/* CTA Button */}
         <motion.div variants={fadeIn("up", 0.4)} className="flex justify-center">
-          <Link href="/quiz">
-            <motion.button
-              className="group relative px-10 py-5 rounded-2xl bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-xl shadow-[0_0_40px_rgba(14,165,233,0.4)] hover:shadow-[0_0_60px_rgba(14,165,233,0.6)] transition-all overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                <MessageSquare className="w-6 h-6" />
-                {t.startProject?.cta || "Iniciar Formulário"}
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-accent-500 to-primary-500"
-                initial={{ x: "100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
-          </Link>
+          <motion.a
+            href={t.hero.whatsappUrl || "https://wa.me/5547996690084"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-10 py-5 rounded-2xl bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-xl shadow-[0_0_40px_rgba(14,165,233,0.4)] hover:shadow-[0_0_60px_rgba(14,165,233,0.6)] transition-all overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={trackContactButtonClick}
+          >
+            <span className="relative z-10 flex items-center gap-3">
+              <MessageSquare className="w-6 h-6" />
+              {t.startProject?.cta || "Iniciar Formulário"}
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+            </span>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-accent-500 to-primary-500"
+              initial={{ x: "100%" }}
+              whileHover={{ x: 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>

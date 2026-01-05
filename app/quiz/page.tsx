@@ -6,6 +6,7 @@ import { Rocket, ArrowLeft, MessageCircle, User, Mail, Building2, Globe, Briefca
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 export default function QuizPage() {
   const { t } = useLanguage();
@@ -57,7 +58,7 @@ export default function QuizPage() {
   const projectTypes = [
     { value: "website", label: t.quiz?.projectTypes?.website || "Website" },
     { value: "landingpage", label: t.quiz?.projectTypes?.landingpage || "Landing Page" },
-    { value: "portfolio", label: t.quiz?.projectTypes?.portfolio || "Portfólio" },
+    { value: "portfolio", label: t.quiz?.projectTypes?.portfolio || "Portfolio" },
   ];
 
   const languages = [
@@ -71,6 +72,9 @@ export default function QuizPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Track Facebook Pixel event
+    trackContactButtonClick();
     
     const projectLabel = projectTypes.find(p => p.value === formData.projectType)?.label || formData.projectType;
     const languageLabels = formData.languages

@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { Mail, MessageCircle, Instagram, Linkedin, MousePointerClick } from "lucide-react";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -89,6 +90,11 @@ export default function Contact() {
               className={`group p-6 rounded-2xl bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm ${info.hoverColor} transition-all duration-300`}
               whileHover={{ y: -5, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                if (info.title === "WhatsApp") {
+                  trackContactButtonClick();
+                }
+              }}
             >
               <div className="flex flex-col items-center text-center gap-4">
                 <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${info.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform`}>

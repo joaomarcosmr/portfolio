@@ -236,6 +236,24 @@ export const translations = {
 
 Looking forward to hearing back!`,
     },
+    thanks: {
+      back: "Back to Home",
+      badge: "Payment Confirmed",
+      title: "Thank you for your",
+      titleHighlight: "Trust!",
+      paymentConfirmed: "Your payment has been confirmed successfully! 🎉",
+      serviceStarted: "Your service will start now!",
+      communication: "We will maintain communication via",
+      communicationWhatsApp: "WhatsApp",
+      communicationText: "to follow up on the development of your project and ensure everything turns out exactly as you envisioned.",
+      nextSteps: "Next Steps",
+      step1: "You will receive a WhatsApp message shortly",
+      step2: "We will collect information and references for your project",
+      step3: "Development started within 5 business days",
+      whatsappButton: "Talk on WhatsApp",
+      backToSite: "Back to Site",
+      sessionId: "Session ID",
+    },
     experiences: [
       {
         company: "Tech Company",
@@ -493,6 +511,24 @@ Looking forward to hearing back!`,
 🌐 Idioma do site: {language}
 
 Aguardo retorno!`,
+    },
+    thanks: {
+      back: "Voltar ao Início",
+      badge: "Pagamento Confirmado",
+      title: "Obrigado pela",
+      titleHighlight: "Confiança!",
+      paymentConfirmed: "Seu pagamento foi confirmado com sucesso! 🎉",
+      serviceStarted: "Seu serviço já será iniciado!",
+      communication: "Iremos manter a comunicação pelo",
+      communicationWhatsApp: "WhatsApp",
+      communicationText: "para acompanhar o desenvolvimento do seu projeto e garantir que tudo saia exatamente como você deseja.",
+      nextSteps: "Próximos Passos",
+      step1: "Você receberá uma mensagem no WhatsApp em breve",
+      step2: "Vamos coletar informações e referências do seu projeto",
+      step3: "Desenvolvimento iniciado em até 5 dias úteis",
+      whatsappButton: "Falar no WhatsApp",
+      backToSite: "Voltar ao Site",
+      sessionId: "Session ID",
     },
     experiences: [
       {

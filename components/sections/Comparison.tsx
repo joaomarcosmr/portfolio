@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Check, X, Euro, CreditCard, Server, Globe, Wrench, Clock, Zap, Heart } from "lucide-react";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 export default function Comparison() {
   const { t } = useLanguage();
@@ -216,10 +217,13 @@ export default function Comparison() {
 
             {/* CTA */}
             <motion.a
-              href="/quiz"
+              href={t.hero.whatsappUrl || "https://wa.me/5547996690084"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(14,165,233,0.4)] hover:shadow-[0_0_30px_rgba(14,165,233,0.6)] transition-all"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={trackContactButtonClick}
             >
               {t.comparison?.me?.cta || "Começar Agora"}
             </motion.a>

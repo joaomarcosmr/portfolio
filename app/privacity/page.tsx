@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Shield } from "lucide-react";
 import Link from "next/link";
 import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PrivacyPage() {
+  const { t } = useLanguage();
   return (
     <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
       {/* Animated Grid Background */}
@@ -60,7 +62,7 @@ export default function PrivacyPage() {
               className="flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span>Voltar</span>
+              <span>{t.quiz?.back || "Back"}</span>
             </Link>
           </motion.div>
 
@@ -179,4 +181,5 @@ export default function PrivacyPage() {
     </main>
   );
 }
+
 

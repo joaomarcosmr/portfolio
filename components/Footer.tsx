@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Instagram, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -97,6 +98,11 @@ export default function Footer() {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={label}
+                  onClick={() => {
+                    if (label === "WhatsApp") {
+                      trackContactButtonClick();
+                    }
+                  }}
                 >
                   <Icon size={20} />
                 </motion.a>

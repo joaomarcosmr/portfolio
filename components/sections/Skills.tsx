@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Search, Code2, Settings, Rocket, Zap, Clock } from "lucide-react";
-import Link from "next/link";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 const stepIcons = [Search, Code2, Settings, Rocket];
 
@@ -257,16 +257,18 @@ export default function Skills() {
           variants={fadeIn("up", 0.8)}
           className="text-center"
         >
-          <Link href="/quiz">
-            <motion.button
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-lg shadow-[0_0_30px_rgba(14,165,233,0.4)] hover:shadow-[0_0_50px_rgba(14,165,233,0.6)] transition-all"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Rocket className="w-6 h-6" />
-              {t.skills.startNow}
-            </motion.button>
-          </Link>
+          <motion.a
+            href={t.hero.whatsappUrl || "https://wa.me/5547996690084"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-bold text-lg shadow-[0_0_30px_rgba(14,165,233,0.4)] hover:shadow-[0_0_50px_rgba(14,165,233,0.6)] transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={trackContactButtonClick}
+          >
+            <Rocket className="w-6 h-6" />
+            {t.skills.startNow}
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>

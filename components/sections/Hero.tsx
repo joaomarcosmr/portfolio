@@ -8,6 +8,7 @@ import TypingEffect from "@/components/animations/TypingEffect";
 import GlitchText from "@/components/animations/GlitchText";
 import NeonText from "@/components/animations/NeonText";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackContactButtonClick } from "@/lib/facebookPixel";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -206,6 +207,7 @@ export default function Hero() {
                 className="group btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={trackContactButtonClick}
               >
                 <span className="flex items-center justify-center gap-2">
                   <MessageCircle className="w-5 h-5" />
